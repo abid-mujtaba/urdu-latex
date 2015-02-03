@@ -25,6 +25,10 @@ tlmgr install iftex
 - The third command initiates *tlmgr*.
 - The final two commands are used to install the *bidi* and *iftex* TeX packages that are required to compile tex files that use the *bidi* package.
 
+To use the Urdu keyboard (I recommend the one from CRULP, now called CLE (FAST University)) navigate to *Applications >> System Tools >> System Settings >> Keyboard >> Text Entry* and press the + button on bottom-left and select *Urdu (Pakistan, CRULP)*.
+
+To change to this keyboard layout (language) one can press *Super + Space* or use the Keyboard Layout Gnome applet on the top bar menu.
+
 
 ## Compilation
 
@@ -35,3 +39,11 @@ xelatex nasr.tex
 ```
 
 After a verbose spitting out of compilation information *xelatex* will create the *nasr.pdf* file in the same folder.
+
+
+## Tips
+
+- The *evince* pdf-reader that comes by default in Ubuntu vertically clips the Urdu text in particular the slanting stroke of the *kaaf*.
+- Google Chrome displays the rendered pdf correctly.
+- Gedit is a useful editor for typing in Urdu. Navigate to *Edit >> Preferences >> Font & Colors (Tab)* to change the font to "Nafees". Choose a large font size (I prefer 18) and you can start typing.
+- Successive lines will start over-lapping for which you need to increase the line-spacing. Install the line-spacing plugin from: https://natural966.wordpress.com/2012/08/19/my-linespacing-plugin-for-gedit-3/ (Note: You will have to change the loader configuration from *python* to *python3* for the plugin to work).  
