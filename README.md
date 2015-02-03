@@ -14,7 +14,7 @@ I will provide the instructions for setting up Urdu type-setting using XeTeX in 
 ```
 sudo apt-get install texlive-xetex
 sudo apt-get install xzdec
-nasr
+
 tlmgr init-usertree
 tlmgr install bidi
 tlmgr install iftex
