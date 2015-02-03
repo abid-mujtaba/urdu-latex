@@ -1,13 +1,29 @@
+% The first command declare this document to be of type 'article', the most common type in LaTeX.
 \documentclass{article}
-\usepackage{fontspec,bidi}
-\newfontfamily\urdufont[Script=Arabic,Scale=1.4]{Nafees Nastaleeq}
 
-\begin{document}
+% The geometry package, if used, must be the first package. We specify the four margins of the documents since the default values are too wide.
+\usepackage[top=1.25in,bottom=1.25in,left=1.00in,right=1.00in]{geometry}
 
-\setRTL
-\urdufont
-\linespread{1.9}
+% The fontspec package allows us to change the main font to Nafees Nastaleeq for Urdu type-setting.
+\usepackage{fontspec}
 
-دنیا تجھے سلام
+% bidi stands for bi-directional and gives access to the \setRTL command which allows us to specify that the text will flow from Left to Right
+\usepackage{bidi}
+
+\pagestyle{empty}           % Specifies the use of a no-frills page style
+\setmainfont[Script=Arabic,Scale=1.5]{Nafees Nastaleeq}         % Specify the main font. This must be installed in your system. Change the scale value to increase the default font size.
+\parindent 0mm          % Declare that every paragraph will NOT start indented
+
+\begin{document}        % The actual content of the document is about to start
+
+\setRTL                 % The text will flow from Right to Left
+\linespread{1.9}        % Increases the line-spacing
+
+\begin{center}          % The text in the 'center' block will appear horizontally centered
+شفیق الرحمان کی کتاب ''حماقتیں'' سے چند جملے
+\end{center}
+\vspace{2\baselineskip}:    % Adds two empty lines worth of vertical space to separate the heading from the rest of the text
+
+یہ ان دنوں کا ذکر ہے جب رُوفی کے دانت پر بجلے گری۔ رُوفی (جن کو بعد میں شیطان کا نام ملا) بجلی سے بہت ڈرتے تھے۔ جب بادل آتے تو وہ بستروں میں چھپتے پھرتے۔ سب کہتے کہ اگر بجلی کو گرنا ہے تو ضرور گرے گی۔ رُوفی جواب دیتے بہ شک گرے، لیکن اس طرح کم از کم اسے مجھے ڈھونڈنا تو پڑے گا۔ ہوا یوں کہ بارش ابھی ابھی تھمی تھی۔ رُوفی صوفے کے پیچھے سے نکل کردبے پائوں برآمدے تک گئے۔ یہ دیکھنے کے بادل چھنٹ گئے یا نہیں۔ اتنے میں ذور سے بجلی کوندی اور ایک عظیم الشان دھماکا ہوا۔ جب وہ ہوش میں آئے تو ان کا ایک دانت ہل رہا تھا۔ انہوں نے آئینہ دیکھا تو دانت کا کچھ حصہ سیاہ نظر آیا۔ اگلے روز آس پاس میں مشہور ہو گیا کہ رات رُوفی میاں کے دانت پر بجلی گری ہے۔ وہ دو دن تک بستر پر پڑے رہے۔
 
 \end{document}
