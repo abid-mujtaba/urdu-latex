@@ -1,0 +1,56 @@
+% The first command declare this document to be of type 'article', the most common type in LaTeX.
+\documentclass{article}
+
+% The geometry package, if used, must be the first package. We specify the four margins of the documents since the default values are too wide.
+\usepackage[top=1.25in,bottom=1.25in,left=1.00in,right=1.00in]{geometry}
+
+% The fontspec package allows us to change the main font to Nafees Nastaleeq for Urdu type-setting.
+\usepackage{fontspec}
+
+% bidi stands for bi-directional and gives access to the \setRTL command which allows us to specify that the text will flow from Left to Right
+\usepackage{bidi}
+
+\pagestyle{empty}           % Specifies the use of a no-frills page style
+\setmainfont[Script=Arabic,Scale=1.5]{Nafees Nastaleeq}         % Specify the main font. This must be installed in your system. Change the scale value to increase the default font size.
+\parindent 0mm          % Declare that every paragraph will NOT start indented
+
+\newcommand{\emptylines}[1]{\vspace{#1\baselineskip}}
+
+\newlength{\widthOfMisra}
+\setlength{\widthOfMisra}{0.4\textwidth}
+
+\newcommand{\misra}[1]{\makebox[\widthOfMisra][s]{#1}\\}
+
+\begin{document}        % The actual content of the document is about to start
+
+\setRTL                 % The text will flow from Right to Left
+\linespread{1.9}        % Increases the line-spacing
+
+\begin{center}          % The text in the 'center' block will appear horizontally centered
+
+   \begingroup
+   \Large
+      کتے
+   \endgroup
+   \emptylines{1}       % Adds a single empty line between the previous text and what follows
+
+   (فیض احمد فیضؔ)
+   \emptylines{3}       % Adds two empty lines worth of vertical space to separate the heading from the rest of the text
+
+
+   \misra{یہ گلیوں کے آوارہ بیکار کتے}
+   \misra{کہ بخشا گیا جن کو ذوقِ گدائی}
+   \misra{زمانے کی پھٹکار سرمایہ اِن کا}
+   \misra{جہاں بھر کی دھتکار اِن کی کمائی}
+
+   \emptylines{3}
+   \misra{نہ آرام شب کو نہ راحت سویرے}
+   \misra{غلازت میں گھر، نالوں میں بسیرے}
+   \misra{جو بگڑیں تو ایک دوسرے سے لڑا دو}
+   \misra{ذرا ایک روٹی کا ٹکڑا دکھا دو}
+
+
+\end{center}
+
+
+\end{document}
