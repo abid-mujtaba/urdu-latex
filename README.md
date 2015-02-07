@@ -6,7 +6,10 @@ We will be using XeTeX for this purpose. XeTeX is a variant of TeX that supports
 
 In this repo I demonstrate how to use XeTeX to type-set both Urdu prose and poetry, the latter revealing the elegance that is possible only with XeTeX.
 
-Browse the *samples* folder to get an idea of what is achievable using LaTeX to type-set Urdu.
+You can view samples of this technique by heading over to:
+
+* [nasr](http://abid-mujtaba.github.io/urdu-latex/docs/nasr.pdf)
+* [nazm](http://abid-mujtaba.github.io/urdu-latex/docs/nazm.pdf)
 
 
 ## Installation
