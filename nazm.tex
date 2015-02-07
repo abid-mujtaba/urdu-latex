@@ -14,43 +14,84 @@
 \setmainfont[Script=Arabic,Scale=1.5]{Nafees Nastaleeq}         % Specify the main font. This must be installed in your system. Change the scale value to increase the default font size.
 \parindent 0mm          % Declare that every paragraph will NOT start indented
 
+% Defining commands for use later in this script
+
+% The \emptylines command will take an integer and insert that many empty lines (vertical space)
 \newcommand{\emptylines}[1]{\vspace{#1\baselineskip}}
 
-\newlength{\widthOfMisra}
-\setlength{\widthOfMisra}{0.4\textwidth}
+% We define new lengths which specify how the misra (verses) are to be constrained spatially
 
-\newcommand{\misra}[1]{\makebox[\widthOfMisra][s]{#1}\\}
+\newlength{\width}          % The width of each misra
+\newlength{\height}         % The height of text above the baseline
+\newlength{\depth}          % The depth of the text below the baseline
+\newlength{\separation}     % The additional vertical separation after every verse
+
+% Change these values when you want to adjust the spatial properties of each verse
+\setlength{\width}{0.4\textwidth}           % \textwidth is the total width of text allowed on each line. We use only a fraction of this space
+\setlength{\height}{22pt}
+\setlength{\depth}{5pt}
+\setlength{\separation}{0.2\baselineskip}   % \baselineskip is the normal/default vertical height of each line. We add an additional fraction of it after every misra
+
+% We define the environment \misra within which we will specify the text of the misra
+\newcommand{\misra}[1]{\raisebox{0pt}[\height][\depth]{\framebox[\width][s]{#1}}\\[\separation]}
+
+% The command above is constructed to give complete control over the spatial properties of each misra.
+%
+% The outer box is a raisebox which is used to constrain the vertical height of the misra.
+% We specify the lift to be 0pt because we don't want to change the vertical position of the entire misra from its baseline.
+% We then specify the height and depth of the box so that regardless of the text inside the vertical separation doesn't change.
+%
+% Next we place a makebox to constrain the misra horizontally.
+% We specify the width of the misra.
+% We also specify 's' to indicate that the content of the box should be stretched which is the required type-setting behaviour of Urdu poetry
+%
+% Finally we use \\[ ] to force a new line after every misra and include a small additional separation to keep them visually apart
+
+% We declare it to be a makebox with the width defined above.
+% We specify that the contents of the makebox are to be stretched (using 's') which is the expected type-setting behaviour of Urdu poetry
+% Note the \\[0.2\baselineskip] after the makebox which forces a new-line after each misra since each misra should appear on its own line.
+
+% We define a command for specifying the title of the poem
+\renewcommand{\title}[1]{\begingroup \Large #1 \endgroup \emptylines{1}}
+%
+% The title text is placed inside a group (delimited by \begingroup and \endgroup).
+% Inside the group we use \Large to increase the font size so that the title appears bigger than the default text
+% We insert an additional empty line after the title to separate it from the rest of the text
 
 \begin{document}        % The actual content of the document is about to start
 
 \setRTL                 % The text will flow from Right to Left
-\linespread{1.9}        % Increases the line-spacing
 
 \begin{center}          % The text in the 'center' block will appear horizontally centered
 
-   \begingroup
-   \Large
-      کتے
-   \endgroup
-   \emptylines{1}       % Adds a single empty line between the previous text and what follows
+   \title{کتے}
 
    (فیض احمد فیضؔ)
-   \emptylines{3}       % Adds two empty lines worth of vertical space to separate the heading from the rest of the text
+   \emptylines{3}       % Adds three empty lines worth of vertical space to separate the heading from the rest of the text
 
 
+   % We start placing the misra one after the other. The \misra command takes place of all of the formatting required
    \misra{یہ گلیوں کے آوارہ بیکار کتے}
    \misra{کہ بخشا گیا جن کو ذوقِ گدائی}
    \misra{زمانے کی پھٹکار سرمایہ اِن کا}
    \misra{جہاں بھر کی دھتکار اِن کی کمائی}
 
-   \emptylines{3}
+   \emptylines{3}                                   % Insert three empty lines between each block of verses
    \misra{نہ آرام شب کو نہ راحت سویرے}
-   \misra{غلازت میں گھر، نالوں میں بسیرے}
-   \misra{جو بگڑیں تو ایک دوسرے سے لڑا دو}
+   \misra{غلاظت میں گھر، نالیوں میں بسیرے}
+   \misra{جو بِگڑیں تو ایک دوسرے سے لڑا دو}
    \misra{ذرا ایک روٹی کا ٹکڑا دکھا دو}
+   \misra{یہ ہر ایک کی ٹھوکریں کھانے والے}
+   \misra{یہ فاقوں سے اُکتا کر مر جانے والے}
 
+   \emptylines{3}
+   \misra{یہ مظلوم مخلوق گر سر اٹھائے}
+   \misra{تو انسان سب سرکشی بھول جائے}
+   \misra{یہ چاہیں وہ دنیا کو اپنا بنا لیں}
+   \misra{یہ آقاؤں کی ہڈّیاں تک چبا لیں}
+   \misra{کوئی ان کو احساسِ ذِلّت دلا دے}
+   \misra{کوئی اِن کی سوئی ہوئی دم ہلا دے}
 
 \end{center}
-
 
 \end{document}
