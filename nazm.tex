@@ -21,19 +21,19 @@
 
 % We define new lengths which specify how the misra (verses) are to be constrained spatially
 
-\newlength{\width}          % The width of each misra
-\newlength{\height}         % The height of text above the baseline
-\newlength{\depth}          % The depth of the text below the baseline
-\newlength{\separation}     % The additional vertical separation after every verse
+\newlength{\Width}          % The width of each misra
+\newlength{\Height}         % The height of text above the baseline
+\newlength{\Depth}          % The depth of the text below the baseline
+\newlength{\Separation}     % The additional vertical separation after every verse
 
 % Change these values when you want to adjust the spatial properties of each verse
-\setlength{\width}{0.4\textwidth}           % \textwidth is the total width of text allowed on each line. We use only a fraction of this space
-\setlength{\height}{22pt}
-\setlength{\depth}{5pt}
-\setlength{\separation}{0.2\baselineskip}   % \baselineskip is the normal/default vertical height of each line. We add an additional fraction of it after every misra
+\setlength{\Width}{0.4\textwidth}           % \textwidth is the total width of text allowed on each line. We use only a fraction of this space
+\setlength{\Height}{22pt}
+\setlength{\Depth}{5pt}
+\setlength{\Separation}{0.2\baselineskip}   % \baselineskip is the normal/default vertical height of each line. We add an additional fraction of it after every misra
 
 % We define the environment \misra within which we will specify the text of the misra
-\newcommand{\misra}[1]{\raisebox{0pt}[\height][\depth]{\framebox[\width][s]{#1}}\\[\separation]}
+\newcommand{\misra}[1]{\raisebox{0pt}[\Height][\Depth]{\makebox[\Width][s]{#1}}\\[\Separation]}
 
 % The command above is constructed to give complete control over the spatial properties of each misra.
 %
