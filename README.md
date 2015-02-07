@@ -4,7 +4,9 @@ Urdu is a language that needs, rather demands, proper type-setting to get the fu
 
 We will be using XeTeX for this purpose. XeTeX is a variant of TeX that supports unicode. This is essential since unicode greatly simplifies typing and storing Urdu characters in a digital format. We will be using the *xelatex* binary which couples XeTeX and LaTeX.
 
-The 'bidi' TeX package is what makes type-setting Urdu possible. In this repo I demonstrate how to use XeTeX to type-set both Urdu prose and poetry, the latter revealing the elegance that is possible only with XeTeX.
+In this repo I demonstrate how to use XeTeX to type-set both Urdu prose and poetry, the latter revealing the elegance that is possible only with XeTeX.
+
+Browse the *samples* folder to get an idea of what is achievable using LaTeX to type-set Urdu.
 
 
 ## Installation
